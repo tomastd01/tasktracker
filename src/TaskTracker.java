@@ -28,11 +28,20 @@ public class TaskTracker {
     }
 
     int deleteTask(int id) {
-        if(id > idCounter || id < 0) return -1;
-
         Task t = getTask(id);
+
         if(t != null) {
             tasks.remove(t);
+            return id;
+        }
+        return -1;
+    }
+
+    int markTask(int id, String status) {
+        Task t = getTask(id);
+        if(t != null) {
+            t.setStatus(status);
+            t.setUpdatedAt(LocalDateTime.now());
             return id;
         }
         return -1;
@@ -53,6 +62,5 @@ public class TaskTracker {
 
         return filtered;
     }
-
 
 }

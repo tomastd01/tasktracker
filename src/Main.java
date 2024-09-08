@@ -2,19 +2,22 @@ import java.time.LocalDateTime;
 
 public class Main {
     public static void main(String[] args) {
-        Task t = new Task(1, "Call my girlfriend today at 21pm", LocalDateTime.now());
-        System.out.println(t);
 
         var tm = new TaskTracker();
-        int id = tm.addTask("Program something");
-        int id2 = tm.addTask("Prepare some coffee");
+        int id = tm.addTask("Call my girlfriend");
+        int id2 = tm.addTask("Program something");
+        int id3 = tm.addTask("Prepare some coffee");
         System.out.println(tm.getAllTasks("todo"));
 
 
         Task taskFound = tm.getTask(3);
         System.out.println(taskFound != null ? taskFound : "Task does not  exist.");
 
-        tm.deleteTask(1);
+        tm.deleteTask(2);
+        System.out.println(tm.getAllTasks());
+
+        int res = tm.markTask(1, "done");
+        System.out.println(res != -1 ? "Task "+res+" updated." : "Task not found.");
         System.out.println(tm.getAllTasks());
     }
 
