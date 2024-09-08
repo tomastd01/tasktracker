@@ -7,7 +7,9 @@ public class Main {
 
         var tm = new TaskTracker();
         int id = tm.addTask("Program something");
-        System.out.println(tm.tasks.getFirst() + " id: "+id);
+        int id2 = tm.addTask("Prepare some coffee");
+        System.out.println(tm.getAllTasks());
+        System.out.println(tm.getAllTasks("todo"));
     }
 
 }
