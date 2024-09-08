@@ -41,6 +41,15 @@ public class TaskTracker {
         Task t = getTask(id);
         if(t != null) {
             t.setStatus(status);
+            return id;
+        }
+        return -1;
+    }
+
+    int updateTask(int id, String desc) {
+        Task t = getTask(id);
+        if(t != null) {
+            t.setDescription(desc);
             t.setUpdatedAt(LocalDateTime.now());
             return id;
         }
