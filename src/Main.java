@@ -13,6 +13,9 @@ public class Main {
 
         Task taskFound = tm.getTask(3);
         System.out.println(taskFound != null ? taskFound : "Task does not  exist.");
+
+        tm.deleteTask(1);
+        System.out.println(tm.getAllTasks());
     }
 
 }

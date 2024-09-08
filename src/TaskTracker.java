@@ -27,6 +27,17 @@ public class TaskTracker {
         return null;
     }
 
+    int deleteTask(int id) {
+        if(id > idCounter || id < 0) return -1;
+
+        Task t = getTask(id);
+        if(t != null) {
+            tasks.remove(t);
+            return id;
+        }
+        return -1;
+    }
+
     ArrayList<Task> getAllTasks() {
         return tasks;
     }
