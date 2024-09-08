@@ -16,6 +16,17 @@ public class TaskTracker {
         return idCounter;
     }
 
+    Task getTask(int id) {
+        if(id > idCounter || id < 0) return null;
+
+        for (Task t : tasks) {
+            if (t.getId() == id) {
+                return t;
+            }
+        }
+        return null;
+    }
+
     ArrayList<Task> getAllTasks() {
         return tasks;
     }
@@ -31,4 +42,6 @@ public class TaskTracker {
 
         return filtered;
     }
+
+
 }

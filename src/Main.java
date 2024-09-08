@@ -8,8 +8,11 @@ public class Main {
         var tm = new TaskTracker();
         int id = tm.addTask("Program something");
         int id2 = tm.addTask("Prepare some coffee");
-        System.out.println(tm.getAllTasks());
         System.out.println(tm.getAllTasks("todo"));
+
+
+        Task taskFound = tm.getTask(3);
+        System.out.println(taskFound != null ? taskFound : "Task does not  exist.");
     }
 
 }
