@@ -29,31 +29,27 @@ public class TaskTracker {
 
     int deleteTask(int id) {
         Task t = getTask(id);
+        if(t == null) return -1;
 
-        if(t != null) {
-            tasks.remove(t);
-            return id;
-        }
-        return -1;
+        tasks.remove(t);
+        return id;
     }
 
     int markTask(int id, String status) {
         Task t = getTask(id);
-        if(t != null) {
-            t.setStatus(status);
-            return id;
-        }
-        return -1;
+        if(t == null) return -1;
+
+        t.setStatus(status);
+        return id;
     }
 
     int updateTask(int id, String desc) {
         Task t = getTask(id);
-        if(t != null) {
-            t.setDescription(desc);
-            t.setUpdatedAt(LocalDateTime.now());
-            return id;
-        }
-        return -1;
+        if(t == null) return -1;
+
+        t.setDescription(desc);
+        t.setUpdatedAt(LocalDateTime.now());
+        return id;
     }
 
     ArrayList<Task> getAllTasks() {

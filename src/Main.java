@@ -13,7 +13,7 @@ public class Main {
         Task taskFound = tm.getTask(3);
         System.out.println(taskFound != null ? taskFound : "Task does not  exist.");
 
-        tm.deleteTask(2);
+        tm.deleteTask(1);
         System.out.println(tm.getAllTasks());
 
         int res = tm.markTask(1, "done");
