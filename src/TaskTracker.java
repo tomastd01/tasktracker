@@ -10,6 +10,11 @@ public class TaskTracker {
         idCounter = 0;
     }
 
+    public TaskTracker(ArrayList<Task> initialData) {
+        tasks = initialData;
+        idCounter = initialData.getLast().getId();
+    }
+
     int addTask(String desc) {
         Task task = new Task(++idCounter, desc, LocalDateTime.now());
         tasks.add(task);
