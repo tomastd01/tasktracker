@@ -1,13 +1,14 @@
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Task {
     private final int id;
     private String description;
     private String status;
-    private final LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
+    private String createdAt;
+    private String updatedAt;
 
-    public Task(int id, String description, String status, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public Task(int id, String description, String status, String createdAt, String updatedAt) {
         this.id = id;
         this. description = description;
         this.status = status;
@@ -20,12 +21,12 @@ public class Task {
         this.id = id;
         this. description = description;
         this.status = "todo";
-        this.createdAt = createdAt;
+        this.createdAt = this.updatedAt = createdAt.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
     }
 
     @Override
     public String toString() {
-        return "* TASK " +id+ ": \"" + description +"\"\n\t* STATUS: "+status+ "\n\t  (added at: "+createdAt.toLocalDate()+")";
+        return "* TASK " +id+ ": \"" + description +"\"\n\t* STATUS: "+status+ "\n\t  (added at: "+createdAt+")\n";
     }
 
     //getters
@@ -38,10 +39,10 @@ public class Task {
     public String getStatus() {
         return status;
     }
-    public LocalDateTime getCreatedAt() {
+    public String getCreatedAt() {
         return createdAt;
     }
-    public LocalDateTime getUpdatedAt() {
+    public String getUpdatedAt() {
         return updatedAt;
     }
 
@@ -54,7 +55,7 @@ public class Task {
         this.status = status;
     }
     public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
+        this.updatedAt = updatedAt.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
     }
 }
 
