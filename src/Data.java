@@ -37,7 +37,7 @@ public class Data {
             return gson.fromJson(json, listType);
 
         } catch (IOException e) {
-            System.out.println("Failed at reading tasks file:\n" + e.getMessage());
+            System.out.println("Reading tasks file:\n" + e.getMessage());
         }
         return new ArrayList<>();
     }
