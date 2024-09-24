@@ -1,7 +1,4 @@
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-
-public class Main {
+public class TaskTrackerDemo {
     public static void main(String[] args) {
         CLI app = new CLI();
         app.start(args);

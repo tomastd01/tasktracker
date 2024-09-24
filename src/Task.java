@@ -26,7 +26,7 @@ public class Task {
 
     @Override
     public String toString() {
-        return "* TASK " +id+ ": \"" + description +"\"\n\t* STATUS: "+status+ "\n\t  (added at: "+createdAt+")\n";
+        return "\n* TASK " +id+ ": \"" + description +"\"\n\t* STATUS: "+status+ "\n\t  (added at: "+createdAt+")";
     }
 
     //getters
