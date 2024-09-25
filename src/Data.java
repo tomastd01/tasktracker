@@ -21,7 +21,6 @@ public class Data {
 
         String json = gson.toJson(tasks);
         fo.write(json);
-        System.out.println("Tasks successfully saved.");
 
         } catch (IOException e) {
             System.out.println("Failed at saving tasks:\n" + e.getMessage());
